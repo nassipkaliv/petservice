@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+.container {
+  padding: 14px;
+}
+
+.catalog-container {
+  display: flex;
+}
+
+.sidebar {
+  border-radius: 14px;
+  background: #fff;
+}
+
+.sidebar-head {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sidebar-head-logo {
+  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1b85ff 0%, #296fbf 100%);
+}
+
+.sidebar-head-name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  color: #323232;
+}
+
+.sidebar-menu {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-tab {
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.sidebar-tab-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sidebar-tab-name {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: #323232;
+}
+
+.sidebar-tab.active {
+  background: rgba(37, 118, 210, 0.1);
+}
+
+.sidebar-tab:hover .sidebar-tab-left svg path {
+  fill: #217CE3;
+}
