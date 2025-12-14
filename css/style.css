@@ -768,3 +768,57 @@ img {
 .op0 {
   opacity: 0;
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-link {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #b0b0b0;
+  text-decoration: none;
+}
+
+.pagination-link.active {
+  color: #6d6d6d;
+}
+
+.tovar-head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tovar-title {
+  font-family: var(--third-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  color: #3d3d3d;
+}
+
+.tovar-buttons-row {
+  display: flex;
+  gap: 24px;
+}
+
+.tovar-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #6d6d6d;
+}
+
+.tovar-border {
+  border-bottom: 1px solid #d1d1d1;
+}
