@@ -15,21 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
       filterDropdown.classList.remove('open');
     }
   });
-  
+
   filterDropdownItems.forEach(function(item) {
     item.addEventListener('click', function() {
       const value = this.getAttribute('data-value');
       const text = this.textContent;
 
-      // Update dropdown button text
       document.querySelector('.filter-dropdown-text').textContent = text;
-
-      // Close dropdown
       filterDropdown.classList.remove('open');
     });
   });
 
-  // Clear all filters
   clearAllBtn.addEventListener('click', function() {
     const tags = filterTagsContainer.querySelectorAll('.filter-tag');
     tags.forEach(function(tag) {
@@ -38,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateClearButtonVisibility();
   });
 
-  // Remove single filter tag
   function initRemoveButtons() {
     document.querySelectorAll('.filter-tag-remove').forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -48,13 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Update clear button visibility
   function updateClearButtonVisibility() {
     const tags = filterTagsContainer.querySelectorAll('.filter-tag');
     clearAllBtn.style.display = tags.length > 0 ? 'block' : 'none';
   }
 
-  // Toggle favorite (starred) button
   function initFavoriteButtons() {
     document.querySelectorAll('.catalog-starred').forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -63,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Initialize
   initRemoveButtons();
   updateClearButtonVisibility();
   initFavoriteButtons();
