@@ -59,4 +59,68 @@ document.addEventListener('DOMContentLoaded', function() {
   initRemoveButtons();
   updateClearButtonVisibility();
   initFavoriteButtons();
+
+  const catalogDropdownWrapper = document.querySelector('.catalog-dropdown-wrapper');
+  const headCatalogBtn = document.querySelector('.head-catalog-btn');
+  const catalogOverlay = document.querySelector('.catalog-mega-overlay');
+
+  if (headCatalogBtn && catalogDropdownWrapper) {
+    headCatalogBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      catalogDropdownWrapper.classList.toggle('open');
+      if (catalogOverlay) {
+        catalogOverlay.classList.toggle('active');
+      }
+    });
+
+    if (catalogOverlay) {
+      catalogOverlay.addEventListener('click', function() {
+        catalogDropdownWrapper.classList.remove('open');
+        catalogOverlay.classList.remove('active');
+      });
+    }
+
+    document.addEventListener('click', function(e) {
+      if (!catalogDropdownWrapper.contains(e.target)) {
+        catalogDropdownWrapper.classList.remove('open');
+        if (catalogOverlay) {
+          catalogOverlay.classList.remove('active');
+        }
+      }
+    });
+  }
+
+  const contractModal = document.getElementById('contractModal');
+  const modalClose = document.getElementById('modalClose');
+  const sidebarProfile = document.querySelector('.sidebar-profile');
+
+  if (sidebarProfile && contractModal) {
+    sidebarProfile.addEventListener('click', function() {
+      contractModal.classList.add('active');
+    });
+  }
+
+  if (modalClose && contractModal) {
+    modalClose.addEventListener('click', function() {
+      contractModal.classList.remove('active');
+    });
+  }
+
+  if (contractModal) {
+    contractModal.addEventListener('click', function(e) {
+      if (e.target === contractModal) {
+        contractModal.classList.remove('active');
+      }
+    });
+
+    const contractOptions = document.querySelectorAll('.contract-option');
+    contractOptions.forEach(function(option) {
+      option.addEventListener('click', function() {
+        contractOptions.forEach(function(opt) {
+          opt.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+  }
 });
