@@ -1,3 +1,44 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/Gilroy-Regular.woff2') format('woff2'),
+        url('../assets/Gilroy-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/Gilroy-Medium.woff2') format('woff2'),
+        url('../assets/Gilroy-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/Gilroy-SemiBold.woff2') format('woff2'),
+        url('../assets/Gilroy-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../assets/Gilroy-Bold.woff2') format('woff2'),
+        url('../assets/Gilroy-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+  --font-family: "Gilroy", sans-serif;
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -457,8 +498,8 @@ img {
 }
 
 .catalog-item-price {
-  font-family: var(--font3);
-  font-weight: 400;
+  font-family: var(--font-family);
+  font-weight: 700;
   font-size: 20px;
   line-height: 150%;
   color: #3d3d3d;
@@ -522,7 +563,8 @@ img {
 }
 
 .catalog-category-title {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -637,7 +679,8 @@ img {
 }
 
 .catalog-category-big-title {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
@@ -795,7 +838,8 @@ img {
 }
 
 .tovar-title {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 24px;
   line-height: 130%;
@@ -924,7 +968,8 @@ img {
 .tovar-swiper-badge {
   border-radius: 8px;
   padding: 8px 12px;
-  font-family: var(--font3);
+  font-family: var(--font-family);
+  font-weight: 700;
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
@@ -1006,7 +1051,8 @@ img {
 }
 
 .tovar-price {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 32px;
   line-height: 130%;
@@ -1133,7 +1179,8 @@ img {
 }
 
 .tovar-tab-btn {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 24px;
   line-height: 130%;
@@ -1201,7 +1248,8 @@ img {
 }
 
 .tovar-composition-title {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 24px;
   line-height: 150%;
@@ -1315,7 +1363,8 @@ img {
 }
 
 .cart-container-head-title {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 32px;
   line-height: 150%;
@@ -1401,7 +1450,8 @@ img {
 .cart-item-badge {
   border-radius: 8px;
   padding: 4px 8px;
-  font-family: var(--font3);
+  font-family: var(--font-family);
+  font-weight: 700;
   font-weight: 400;
   font-size: 11px;
   text-transform: uppercase;
@@ -1496,7 +1546,8 @@ img {
 }
 
 .cart-item-price {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
@@ -1539,7 +1590,8 @@ img {
 
 .cart-quantity-value {
   padding: 0 3.5px;
-  font-family: var(--font3);
+  font-family: var(--font-family);
+  font-weight: 700;
   font-weight: 400;
   font-size: 14px;
   color: #207eeb;
@@ -1654,7 +1706,8 @@ img {
 }
 
 .cart-right-price-big-text {
-  font-family: var(--third-family);
+  font-family: var(--font-family);
+  font-weight: 600;
   font-weight: 400;
   font-size: 24px;
   line-height: 150%;
