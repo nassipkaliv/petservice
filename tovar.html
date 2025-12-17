@@ -567,12 +567,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Tabs functionality
   document.querySelectorAll('.tovar-tab-btn').forEach(function(tabBtn) {
     tabBtn.addEventListener('click', function() {
       var tabId = this.getAttribute('data-tab');
 
-      // Remove active from all tabs
       document.querySelectorAll('.tovar-tab-btn').forEach(function(btn) {
         btn.classList.remove('active');
       });
@@ -580,13 +578,11 @@ document.addEventListener('DOMContentLoaded', function() {
         content.classList.remove('active');
       });
 
-      // Add active to clicked tab
       this.classList.add('active');
       document.getElementById(tabId).classList.add('active');
     });
   });
 
-  // Copy icon functionality
   document.querySelectorAll('.copy-icon').forEach(function(icon) {
     icon.addEventListener('click', function() {
       var td = this.closest('td');
