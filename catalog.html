@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <title>Pet Service - Catalog</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -168,6 +168,80 @@
           </a>
       </div>
     </div>
+
+    <!-- Mobile Filters -->
+    <div class="mobile-head-content">
+      <div class="container">
+        <div class="pagination">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.25 13.5L6.75 9L11.25 4.5" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <a class="pagination-link active">Кошки</a>
+        </div>
+        <div class="catalog-head-content">
+          <h2 class="catalog-title">Сухой корм</h2>
+          <p class="catalog-text">1324 товара</p>
+        </div>
+        <div class="filters-row">
+          <button class="filter-dropdown-btn">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.5 3.45C1.5 3.02996 1.5 2.81994 1.58175 2.65951C1.65365 2.51839 1.76839 2.40365 1.90951 2.33175C2.06994 2.25 2.27996 2.25 2.7 2.25H15.3C15.72 2.25 15.9301 2.25 16.0905 2.33175C16.2316 2.40365 16.3463 2.51839 16.4183 2.65951C16.5 2.81994 16.5 3.02996 16.5 3.45V3.95205C16.5 4.15364 16.5 4.25444 16.4754 4.34817C16.4535 4.43123 16.4176 4.50993 16.3691 4.58082C16.3144 4.66082 16.2383 4.72684 16.0859 4.85887L11.2891 9.01613C11.1367 9.14816 11.0606 9.21418 11.0059 9.29418C10.9574 9.36507 10.9215 9.44377 10.8996 9.52683C10.875 9.62056 10.875 9.72136 10.875 9.92295V13.8438C10.875 13.9905 10.875 14.0638 10.8513 14.1272C10.8304 14.1832 10.7964 14.2334 10.7522 14.2736C10.7021 14.3192 10.634 14.3464 10.4978 14.4009L7.94783 15.4209C7.67218 15.5311 7.53435 15.5863 7.4237 15.5633C7.32695 15.5432 7.24204 15.4857 7.18744 15.4033C7.125 15.3091 7.125 15.1607 7.125 14.8638V9.92295C7.125 9.72136 7.125 9.62056 7.10037 9.52683C7.07854 9.44377 7.0426 9.36507 6.99413 9.29418C6.93943 9.21418 6.86326 9.14816 6.71092 9.01613L1.91408 4.85887C1.76174 4.72684 1.68557 4.66082 1.63087 4.58082C1.5824 4.50993 1.54646 4.43123 1.52463 4.34817C1.5 4.25444 1.5 4.15364 1.5 3.95205V3.45Z" stroke="#313C49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="filter-dropdown-text">Фильтры</span>
+          </button>
+          <div class="filter-dropdown">
+            <button class="filter-dropdown-btn">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9H13.5M2.25 4.5H15.75M6.75 13.5H11.25" stroke="#313C49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="filter-dropdown-text">По наличию</span>
+            </button>
+            <div class="filter-dropdown-menu">
+              <div class="filter-dropdown-item" data-value="all">Со скидкой</div>
+              <div class="filter-dropdown-item" data-value="in-stock">Вид питомца (2)</div>
+              <div class="filter-dropdown-item" data-value="out-of-stock">Возраст питомца (4)</div>
+              <div class="filter-dropdown-item" data-value="preorder">Возраст питомца</div>
+            </div>
+          </div>
+          <div class="filter-tags" id="filterTags">
+            <div class="filter-tag" data-id="1">
+              <span>Со скидкой</span>
+              <span class="filter-tag-remove">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.5 4.5L4.5 13.5M4.5 4.5L13.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="filter-tag" data-id="2">
+              <span>Вид питомца (2)</span>
+              <span class="filter-tag-remove">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.5 4.5L4.5 13.5M4.5 4.5L13.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="filter-tag" data-id="3">
+              <span>Возраст питомца (4)</span>
+              <span class="filter-tag-remove">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.5 4.5L4.5 13.5M4.5 4.5L13.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </div>
+            <div class="filter-tag" data-id="4">
+              <span>Возраст питомца (4)</span>
+              <span class="filter-tag-remove">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.5 4.5L4.5 13.5M4.5 4.5L13.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <button class="filter-clear-btn" id="clearAllFilters" style="display: block;">Очистить все</button>
+        </div>
+      </div>
+    </div>
+
     <div class="container catalog-container">
       <div class="main-container">
         <div class="pagination">
@@ -185,6 +259,7 @@
           <h2 class="catalog-title">Сухой корм</h2>
           <p class="catalog-text">1324 товара</p>
         </div>
+
         <div class="main-container-shop">
           <div class="main-container-category">
             <div class="catalog-category">
@@ -934,6 +1009,36 @@
       </div>
     </div>
   </div>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="mobile-bottom-nav">
+  <a href="index.html" class="mobile-nav-item">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 22V12H15V22M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Главная</span>
+  </a>
+  <a href="catalog.html" class="mobile-nav-item active">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Каталог</span>
+  </a>
+  <a href="cart.html" class="mobile-nav-item">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Корзина</span>
+  </a>
+  <a href="profile.html" class="mobile-nav-item">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Профиль</span>
+  </a>
+</nav>
 
 <script src="js/app.js"></script>
 </body>
