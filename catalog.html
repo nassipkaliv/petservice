@@ -10,11 +10,9 @@
   
   <div class="header-address">
     <div class="header-address-text">Гороховая улица, 67, Санкт-Петербург</div>
-    <span>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5.25 10.5L8.75 7L5.25 3.5" stroke="#2D78FF" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </span>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.25 10.5L8.75 7L5.25 3.5" stroke="#2D78FF" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
   </div>
 
   <div class="wrapper">
@@ -183,7 +181,7 @@
           <p class="catalog-text">1324 товара</p>
         </div>
         <div class="filters-row">
-          <button class="filter-dropdown-btn">
+          <button class="filter-dropdown-btn" id="mobileFiltersBtn">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.5 3.45C1.5 3.02996 1.5 2.81994 1.58175 2.65951C1.65365 2.51839 1.76839 2.40365 1.90951 2.33175C2.06994 2.25 2.27996 2.25 2.7 2.25H15.3C15.72 2.25 15.9301 2.25 16.0905 2.33175C16.2316 2.40365 16.3463 2.51839 16.4183 2.65951C16.5 2.81994 16.5 3.02996 16.5 3.45V3.95205C16.5 4.15364 16.5 4.25444 16.4754 4.34817C16.4535 4.43123 16.4176 4.50993 16.3691 4.58082C16.3144 4.66082 16.2383 4.72684 16.0859 4.85887L11.2891 9.01613C11.1367 9.14816 11.0606 9.21418 11.0059 9.29418C10.9574 9.36507 10.9215 9.44377 10.8996 9.52683C10.875 9.62056 10.875 9.72136 10.875 9.92295V13.8438C10.875 13.9905 10.875 14.0638 10.8513 14.1272C10.8304 14.1832 10.7964 14.2334 10.7522 14.2736C10.7021 14.3192 10.634 14.3464 10.4978 14.4009L7.94783 15.4209C7.67218 15.5311 7.53435 15.5863 7.4237 15.5633C7.32695 15.5432 7.24204 15.4857 7.18744 15.4033C7.125 15.3091 7.125 15.1607 7.125 14.8638V9.92295C7.125 9.72136 7.125 9.62056 7.10037 9.52683C7.07854 9.44377 7.0426 9.36507 6.99413 9.29418C6.93943 9.21418 6.86326 9.14816 6.71092 9.01613L1.91408 4.85887C1.76174 4.72684 1.68557 4.66082 1.63087 4.58082C1.5824 4.50993 1.54646 4.43123 1.52463 4.34817C1.5 4.25444 1.5 4.15364 1.5 3.95205V3.45Z" stroke="#313C49" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
@@ -971,70 +969,107 @@
     </footer>
   </div>
 
-  <div class="modal-overlay" id="contractModal">
+  <div class="modal-overlay" id="addressModal">
     <div class="modal">
       <div class="modal-header">
-        <h3 class="modal-title">Выбор договора</h3>
-        <button class="modal-close" id="modalClose">
+        <h3 class="modal-title">Выберите точку</h3>
+        <button class="modal-close" id="addressModalClose">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" stroke="#627C95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
       </div>
+      <div class="modal-search">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.75 15.75L13.1251 13.125M15 8.625C15 12.1458 12.1458 15 8.625 15C5.10418 15 2.25 12.1458 2.25 8.625C2.25 5.10418 5.10418 2.25 8.625 2.25C12.1458 2.25 15 5.10418 15 8.625Z" stroke="#2D78FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <input type="text" class="modal-search-input" placeholder="Введите адрес">
+      </div>
       <div class="modal-body">
         <label class="contract-option active">
-          <input type="radio" name="contract" class="contract-radio" checked>
+          <input type="radio" name="address" class="contract-radio" checked>
           <span class="contract-radio-custom"></span>
           <div class="contract-info">
-            <span class="contract-type">Заводчик</span>
-            <span class="contract-details">ООО "Лайтфокус", Иванов Алексей Сергеевич (Москва)</span>
+            <span class="contract-type">Гороховая улица, 67, Санкт-Петербург</span>
+            <span class="contract-details">Пн-Пт: 10:00 - 21:00, Сб-Вс: 10:00-20:00</span>
           </div>
         </label>
         <label class="contract-option">
-          <input type="radio" name="contract" class="contract-radio">
+          <input type="radio" name="address" class="contract-radio">
           <span class="contract-radio-custom"></span>
           <div class="contract-info">
-            <span class="contract-type">Ветеринарный врач</span>
-            <span class="contract-details">ИП Петрова Мария Владимировна, "Здоровый Питомец" (Казань)</span>
+            <span class="contract-type">Гороховая улица, 67, Санкт-Петербург</span>
+            <span class="contract-details">Пн-Пт: 10:00 - 21:00, Сб-Вс: 10:00-20:00</span>
+            <span class="contract-delivery">Срок доставки</span>
+            <span class="contract-delivery-days">3 дня</span>
           </div>
         </label>
         <label class="contract-option">
-          <input type="radio" name="contract" class="contract-radio">
+          <input type="radio" name="address" class="contract-radio">
           <span class="contract-radio-custom"></span>
           <div class="contract-info">
-            <span class="contract-type">Интернет-магазин</span>
-            <span class="contract-details">Захаров Дмитрий Олегович- ИП "Зоомир", г. Омск, ул 10 лет Октября</span>
+            <span class="contract-type">Гороховая улица, 67, Санкт-Петербург</span>
+            <span class="contract-details">Пн-Пт: 10:00 - 21:00, Сб-Вс: 10:00-20:00</span>
+            <span class="contract-delivery">Срок доставки</span>
+            <span class="contract-delivery-days">3 дня</span>
           </div>
         </label>
       </div>
     </div>
   </div>
 
+<!-- Mobile Filters Popup -->
+<div class="mobile-filters-popup" id="mobileFiltersPopup">
+  <div class="mobile-filters-popup-overlay"></div>
+  <div class="mobile-filters-popup-content">
+    <div class="mobile-filters-header">
+      <h3 class="mobile-filters-title">Фильтры</h3>
+      <button class="mobile-filters-close" id="mobileFiltersClose">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-filters-body" id="mobileFiltersBody">
+      <!-- Content will be cloned from .main-container-category via JS -->
+      <div class="mobile-filters-footer catalog-category">
+        <button class="mobile-filters-apply" id="mobileFiltersApply">Применить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Mobile Bottom Navigation -->
 <nav class="mobile-bottom-nav">
-  <a href="index.html" class="mobile-nav-item">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9 22V12H15V22M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <span>Главная</span>
-  </a>
   <a href="catalog.html" class="mobile-nav-item active">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 4.5C9.41421 4.5 9.75 4.16421 9.75 3.75C9.75 3.33579 9.41421 3 9 3C8.58579 3 8.25 3.33579 8.25 3.75C8.25 4.16421 8.58579 4.5 9 4.5Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M9 9.75C9.41421 9.75 9.75 9.41421 9.75 9C9.75 8.58579 9.41421 8.25 9 8.25C8.58579 8.25 8.25 8.58579 8.25 9C8.25 9.41421 8.58579 9.75 9 9.75Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M9 15C9.41421 15 9.75 14.6642 9.75 14.25C9.75 13.8358 9.41421 13.5 9 13.5C8.58579 13.5 8.25 13.8358 8.25 14.25C8.25 14.6642 8.58579 15 9 15Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M14.25 4.5C14.6642 4.5 15 4.16421 15 3.75C15 3.33579 14.6642 3 14.25 3C13.8358 3 13.5 3.33579 13.5 3.75C13.5 4.16421 13.8358 4.5 14.25 4.5Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M14.25 9.75C14.6642 9.75 15 9.41421 15 9C15 8.58579 14.6642 8.25 14.25 8.25C13.8358 8.25 13.5 8.58579 13.5 9C13.5 9.41421 13.8358 9.75 14.25 9.75Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M14.25 15C14.6642 15 15 14.6642 15 14.25C15 13.8358 14.6642 13.5 14.25 13.5C13.8358 13.5 13.5 13.8358 13.5 14.25C13.5 14.6642 13.8358 15 14.25 15Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M3.75 4.5C4.16421 4.5 4.5 4.16421 4.5 3.75C4.5 3.33579 4.16421 3 3.75 3C3.33579 3 3 3.33579 3 3.75C3 4.16421 3.33579 4.5 3.75 4.5Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M3.75 9.75C4.16421 9.75 4.5 9.41421 4.5 9C4.5 8.58579 4.16421 8.25 3.75 8.25C3.33579 8.25 3 8.58579 3 9C3 9.41421 3.33579 9.75 3.75 9.75Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M3.75 15C4.16421 15 4.5 14.6642 4.5 14.25C4.5 13.8358 4.16421 13.5 3.75 13.5C3.33579 13.5 3 13.8358 3 14.25C3 14.6642 3.33579 15 3.75 15Z" stroke="#818181" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
     <span>Каталог</span>
   </a>
+  <a href="zakaz.html" class="mobile-nav-item">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.3337 7.49996V4.99996C13.3337 3.15901 11.8413 1.66663 10.0004 1.66663C8.15944 1.66663 6.66706 3.15901 6.66706 4.99996V7.49996M2.99373 8.6266L2.49373 13.9599C2.35156 15.4763 2.28048 16.2346 2.5321 16.8202C2.75314 17.3346 3.14049 17.76 3.63207 18.0281C4.19166 18.3333 4.95319 18.3333 6.47626 18.3333H13.5245C15.0476 18.3333 15.8091 18.3333 16.3687 18.0281C16.8603 17.76 17.2476 17.3346 17.4687 16.8202C17.7203 16.2346 17.6492 15.4763 17.5071 13.9599L17.0071 8.6266C16.887 7.34608 16.827 6.70582 16.539 6.22176C16.2854 5.79545 15.9107 5.45422 15.4625 5.2415C14.9537 4.99996 14.3106 4.99996 13.0245 4.99996L6.97626 4.99996C5.69013 4.99996 5.04707 4.99996 4.53824 5.24149C4.09011 5.45422 3.7154 5.79545 3.46177 6.22176C3.1738 6.70582 3.11377 7.34608 2.99373 8.6266Z" stroke="#818181" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <span>Заказы</span>
+  </a>
   <a href="cart.html" class="mobile-nav-item">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.66675 1.66663H2.75522C2.96023 1.66663 3.06274 1.66663 3.14523 1.70433C3.21793 1.73755 3.27954 1.79098 3.32271 1.85825C3.37169 1.93458 3.38619 2.03606 3.41518 2.23901L3.80961 4.99996M3.80961 4.99996L4.68618 11.4428C4.79742 12.2604 4.85304 12.6692 5.0485 12.9769C5.22073 13.2481 5.46765 13.4637 5.75954 13.5978C6.0908 13.75 6.50337 13.75 7.3285 13.75H14.4601C15.2455 13.75 15.6383 13.75 15.9592 13.6086C16.2422 13.484 16.485 13.2832 16.6603 13.0285C16.8592 12.7396 16.9327 12.3538 17.0796 11.5823L18.1827 5.79137C18.2344 5.5198 18.2603 5.38401 18.2228 5.27788C18.1899 5.18477 18.125 5.10636 18.0397 5.05664C17.9425 4.99996 17.8042 4.99996 17.5278 4.99996H3.80961ZM8.33341 17.5C8.33341 17.9602 7.96032 18.3333 7.50008 18.3333C7.03984 18.3333 6.66675 17.9602 6.66675 17.5C6.66675 17.0397 7.03984 16.6666 7.50008 16.6666C7.96032 16.6666 8.33341 17.0397 8.33341 17.5ZM15.0001 17.5C15.0001 17.9602 14.627 18.3333 14.1667 18.3333C13.7065 18.3333 13.3334 17.9602 13.3334 17.5C13.3334 17.0397 13.7065 16.6666 14.1667 16.6666C14.627 16.6666 15.0001 17.0397 15.0001 17.5Z" stroke="#818181" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
     <span>Корзина</span>
   </a>
   <a href="profile.html" class="mobile-nav-item">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.5 16.6667C4.44649 14.6021 7.08918 13.3333 10 13.3333C12.9108 13.3333 15.5535 14.6021 17.5 16.6667M13.75 6.25C13.75 8.32107 12.0711 10 10 10C7.92893 10 6.25 8.32107 6.25 6.25C6.25 4.17893 7.92893 2.5 10 2.5C12.0711 2.5 13.75 4.17893 13.75 6.25Z" stroke="#818181" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
     <span>Профиль</span>
   </a>
